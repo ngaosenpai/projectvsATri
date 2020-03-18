@@ -1,0 +1,360 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "UTM Avo";
+}
+#main-header {
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.6);
+}
+.header {
+  display: flex;
+  padding: 20px 0;
+  position: fixed;
+  z-index: 9999;
+  background: white;
+  width: 100%;
+  left: 0;
+  height: 100px;
+  justify-content: space-evenly;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  -webkit-transition: height 0.3s;
+  -moz-transition: height 0.3s;
+  transition: height 0.3s;
+}
+.header.shrink {
+  height: 80px;
+  /* line-height: 80px; */
+}
+.shrink .logo {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  /* margin-top: -15px; */
+}
+.header .navigate {
+  display: flex;
+  align-items: center;
+}
+.header .navigate ul {
+  display: flex;
+  justify-content: center;
+}
+.header .navigate ul li {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.header .navigate ul li a::before {
+  position: absolute;
+  width: 0%;
+  background-color: #3838d2;
+  height: 2px;
+  content: "";
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+}
+.header .navigate ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  position: relative;
+  padding-bottom: 5px;
+}
+.header .navigate ul li a:hover {
+  color: #3838d2;
+  transition: 0.6 all;
+}
+.header .navigate ul li a:hover::before {
+  width: 100%;
+  transition: 0.6s all;
+}
+
+/* end header */
+
+/* banner */
+.slideshow {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  z-index: 1;
+  margin-top: 90px;
+}
+.slideshow .slideshow-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.slideshow .slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.slideshow .slide {
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.slideshow .slide.is-active {
+  display: block;
+}
+.slideshow .slide.is-loaded {
+  opacity: 1;
+}
+.slideshow .slide .caption {
+  padding: 0 100px;
+}
+.slideshow .slide .image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  z-index: 1;
+  background-size: cover;
+  image-rendering: optimizeQuality;
+}
+.slideshow .slide .image-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background-image: linear-gradient(180deg, rgba(49, 158, 216, 0.93) 0%, rgba(53, 70, 160, 0.7) 100%);
+  background-color: rgba(255, 255, 255, 0);
+}
+.slideshow .slide .image {
+  width: 100%;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+  height: 100%;
+}
+.slideshow .slide-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slideshow .slide .title {
+  margin: 0 auto 15px;
+  max-width: 1000px;
+  font: 300 50px/1.2 "Oswald", sans-serif;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-family: "UTM Avo";
+}
+.slideshow .slide .text {
+  margin: 0 auto;
+  max-width: 1000px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+.slideshow .slide .text p {
+  text-transform: uppercase;
+  color: #f2b032;
+  font-family: "UTM Avo";
+  font-weight: 500;
+  font-weight: bold;
+}
+.slideshow .slide .btn {
+  margin: 15px 0 0;
+  color: white;
+  border-color: #fff;
+}
+.slideshow .slide .btn::before {
+  background: #fff;
+}
+.slideshow .pagination {
+  position: absolute;
+  bottom: 35px;
+  left: 44%;
+  width: 100%;
+  height: 12px;
+  cursor: default;
+  z-index: 2;
+  text-align: center;
+}
+.slideshow .pagination .item {
+  display: inline-block;
+  padding: 15px 5px;
+  position: relative;
+  width: 46px;
+  height: 32px;
+  cursor: pointer;
+  text-indent: -999em;
+  z-index: 1;
+}
+.slideshow .pagination .item + .page {
+  margin-left: -2px;
+}
+.slideshow .pagination .item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 5px;
+  width: 36px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.5);
+  transition: background 0.2s ease;
+}
+.slideshow .pagination .item::after {
+  width: 0;
+  background: #fff;
+  z-index: 2;
+  transition: width 0.2s ease;
+}
+.slideshow .pagination .item:hover::before,
+.slideshow .pagination .item.is-active::before {
+  background-color: #fff;
+}
+.slideshow .arrows .arrow {
+  margin: -33px 0 0;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  z-index: 3;
+}
+.slideshow .arrows .prev {
+  left: 30px;
+}
+.slideshow .arrows .prev:hover .svg {
+  left: -10px;
+}
+.slideshow .arrows .next {
+  right: 30px;
+}
+.slideshow .arrows .next:hover .svg {
+  left: 10px;
+}
+.slideshow .arrows .svg {
+  position: relative;
+  left: 0;
+  width: 14px;
+  height: 26px;
+  fill: #fff;
+  transition: left 0.2s ease;
+}
+
+/* page content */
+
+.page-content {
+  padding: 35px 0;
+}
+.page-content p {
+  font-size: 16px;
+  text-align: justify;
+  font-family: "UTM Avo";
+}
+.page-content .page-content-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-content .page-content-row .img-right {
+  display: flex;
+  justify-content: center;
+}
+.page-content .page-content-row .img-right img {
+  width: 420px;
+}
+
+/* page-new  */
+.page-new {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.page-new a {
+  text-decoration: none;
+}
+
+.page-new .inner {
+  box-shadow: 2px 2px 6px 4px rgba(0, 0, 0, 0.3);
+}
+.page-new .inner:hover {
+  transform: translateY(-3%);
+  transition: all 0.3s ease-in;
+}
+.page-new .inner .page-new-img img {
+  width: 100%;
+  height: auto;
+}
+.page-new .inner .page-new-content .type-title {
+  display: block;
+  color: black;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 15px;
+}
+.page-new .inner .page-new-content .desc {
+  color: black;
+  padding: 10px;
+  text-align: center;
+}
+/* bg-newfeed */
+.bg-newfeed {
+  background-image: url("https://yoshigroup.jp/wp-content/uploads/2019/06/business-01.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 250px;
+  background-attachment: fixed;
+}
+.bg-newfeed h1 {
+  padding-top: 25px;
+  text-align: center;
+}
+/* footer */
+.bg-footer {
+  background-color: #0c71c3 !important;
+}
+.bg-footer .inner .ft-title span {
+  display: block;
+  font-size: 24px;
+}
+.bg-footer .inner .menu-ft ul {
+  padding: 0;
+  padding-left: 20px;
+}
+.bg-footer .inner .menu-ft ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+.cpry-right {
+  background: black;
+}
+.cpry-right span {
+  display: block;
+  text-align: center;
+  color: white;
+  padding: 10px 0;
+}
