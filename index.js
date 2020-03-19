@@ -4,8 +4,16 @@ const express = require("express")
 const cookieParser = require('cookie-parser')
 const mongoose = require("mongoose");
 //connect to database
+mongoose.connect(process.env.DATABASE_URL, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+	useFindAndModify : false
+})
 
 
+const loginAdmin = require("./routers/admin.login.router")
+const adminRouter = require("./routers/admin.router")
+const authorized = require("./middlewares/authorized.admin")
 
 let app = express();
 
@@ -19,6 +27,9 @@ app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 app.get("/", (req, res) => res.render("pages/index"))
+
+app.use("/admin-login", loginAdmin)
+app.use("/admin", authorized.checkAuth, adminRouter)
 
 app.listen(process.env.PORT, () => {
 	console.log(`server is running on port ${process.env.PORT}`);

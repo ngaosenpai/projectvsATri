@@ -1,0 +1,23 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible', content='ie=edge')
+  title yoshigroup
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css')
+  link(rel='stylesheet', href='font/font.css')
+  link(rel='stylesheet', href='css/login.css')
+.container-fluid
+  .row.cus-bg.dflex
+    .col-xs-12.col-sm-9.col-md-6.col-lg-4
+      p=message
+      .wrap-form
+        form(action='/admin-login', method="POST")
+          h2 ADMIN LOGIN
+          label(for='usr') USERNAME
+          input#usr(type='text', required='true', name='username')
+          label(for='pwd') PASSWORD
+          input#pwd(type='password', required='true', name='password')
+          a(href='#') Forget password?
+          button Login

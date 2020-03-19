@@ -61,6 +61,7 @@ body {
   font-size: 1.3rem;
   position: relative;
   padding-bottom: 5px;
+  font-weight: 800;
 }
 .header .navigate ul li a:hover {
   color: #3838d2;
@@ -262,7 +263,32 @@ body {
   fill: #fff;
   transition: left 0.2s ease;
 }
-
+/* page intro */
+.page-intro h1 {
+  text-align: center;
+  margin-top: 35px;
+}
+.page-intro .page-img img {
+  max-width: 100%;
+}
+a.view-intro {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+a.view-intro:hover {
+  background-color: #0c71c3;
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+}
+a.view-intro:hover i {
+  padding-left: 5px;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
 /* page content */
 
 .page-content {
@@ -272,6 +298,7 @@ body {
   font-size: 16px;
   text-align: justify;
   font-family: "UTM Avo";
+  padding-bottom: 15px;
 }
 .page-content .page-content-row {
   display: flex;
@@ -325,20 +352,38 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 250px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   background-attachment: fixed;
 }
+.bg-newfeed::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 .bg-newfeed h1 {
-  padding-top: 25px;
-  text-align: center;
+  color: #fff;
+  z-index: 99;
 }
 /* footer */
 .bg-footer {
+  padding: 25px 0;
   background-color: #0c71c3 !important;
 }
 .bg-footer .inner .ft-title span {
   display: block;
   font-size: 24px;
+}
+.bg-footer .inner-qr-code {
+  text-align: center;
+}
+.bg-footer .inner img.qr-code {
+  width: 50%;
 }
 .bg-footer .inner .menu-ft ul {
   padding: 0;
@@ -357,4 +402,85 @@ body {
   text-align: center;
   color: white;
   padding: 10px 0;
+}
+/* page-why */
+
+.page-why h1 {
+  font-family: "Roboto Condensed";
+  text-align: center;
+  font-weight: 900;
+}
+.page-why p {
+}
+
+/* page-galary */
+.page-galary {
+  padding: 0 0 30px 0;
+}
+
+/* giới thiệu chung */
+.page-gt img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-top: 90px;
+  width: 100%;
+}
+.page-title h1 {
+  margin-top: 35px;
+  font-weight: 600;
+}
+
+/* map contact */
+.map {
+  margin-top: 90px;
+  margin-bottom: 25px;
+}
+.map .page-title {
+  text-align: center;
+}
+.map .form-contact {
+  display: flex;
+  justify-content: center;
+}
+.map .form-contact form {
+  width: 60%;
+}
+.map .form-contact form .btn {
+  text-align: center;
+}
+/* breckcump */
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+  padding-top: 10px;
+}
+.breadcrumb li {
+  list-style: none;
+}
+.breadcrumb li a {
+  text-decoration: none;
+  font-size: 18px;
+}
+.breadcrumb li a.active {
+  color: black;
+}
+/* cong ty thanh vien */
+.page-group {
+  margin-top: 90px;
+}
+.page-group img {
+  width: 100%;
+}
+.page-group .page-content {
+  padding: 15px 0;
+}
+.page-group .page-content a:not(span) {
+  font-size: 18px;
+}
+.page-group .page-content h4 {
+  font-weight: bold;
+}
+.page-group .page-content span {
+  font-weight: normal;
 }
