@@ -484,3 +484,18 @@ a.view-intro:hover i {
 .page-group .page-content span {
   font-weight: normal;
 }
+/* page detail */
+.page-detail-newfeed {
+  margin-top: 100px;
+}
+.page-detail-newfeed img {
+  width: 100%;
+}
+/* all new-feed */
+.all-newfeed {
+  margin-top: 100px;
+}
+/* page-recruitment */
+.page-recruitment {
+  margin-top: 100px;
+}

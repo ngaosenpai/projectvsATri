@@ -312,3 +312,6 @@ $('.owl-carousel').owlCarousel({
     }
   }
 })
+$(document).ready(function () {
+  $('.image-link').magnificPopup({ type: 'image' });
+});
