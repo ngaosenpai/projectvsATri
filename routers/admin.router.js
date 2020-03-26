@@ -9,5 +9,6 @@ const multer = Multer({
 });
 const controller = require("../controllers/admin.controller")
 router.get("/", controller.index)
+router.get("/:page", controller.index2)
 router.post("/:key", multer.array("files", 2), controller.exec)
 module.exports = router
